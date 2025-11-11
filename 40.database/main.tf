@@ -7,7 +7,7 @@ resource "aws_instance" "mongodb" {
   tags = merge(
     local.common_tags,
     {
-        Name = "${common_name_suffix}-mongodb"
+        Name = "${local.common_name_suffix}-mongodb"
     }
   )
 }
