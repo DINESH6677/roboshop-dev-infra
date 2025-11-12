@@ -15,7 +15,7 @@ touch ansible.log
 
 cd $REPO_DIR
 
-if [ -d $ANSIBLE_DIR];then
+if [ -d $ANSIBLE_DIR ]; then
     cd ANSIBLE_DIR
     git pull
 else
@@ -23,4 +23,4 @@ else
     cd $ANSIBLE_DIR
 fi
 
-ansible-playbook -e component=$component environment=$environment main.yaml 
+ansible-playbook -e "component=$component environment=$environment" main.yaml 
