@@ -16,7 +16,7 @@ touch ansible.log
 cd $REPO_DIR
 
 if [ -d $ANSIBLE_DIR ]; then
-    cd ANSIBLE_DIR
+    cd $ANSIBLE_DIR
     git pull
 else
     git clone $REPO_URL
