@@ -58,7 +58,7 @@ resource "aws_ami_from_instance" "catalogue" {
   )
 }
 
-resource "aws_lb_target_group" "test" {
+resource "aws_lb_target_group" "catalogue"{
   name     = "${local.common_name_suffix}-catalogue-ami"
   port     = 8080
   protocol = "HTTP"
