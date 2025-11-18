@@ -5,3 +5,7 @@ variable "component"{
 variable "rule_priority"{
     default=10
 }
+
+variable "domain_name"{
+    default = "devopswithdinesh.shop"
+}
