@@ -1,26 +1,21 @@
-data "aws_ami" "instance" {
-  most_recent = true
-  owners = ["973714476881"]
+data "aws_ami" "open_vpn" {
+    owners           = ["679593333241"]
+    most_recent      = true
+    
+    filter {
+        name   = "name"
+        values = ["OpenVPN Access Server Community Image-8fbe3379-*"]
+    }
 
-  filter {
-    name   = "name"
-    values = ["RHEL-9-DevOps-Practice"]
-  }
+    filter {
+        name   = "root-device-type"
+        values = ["ebs"]
+    }
 
-  filter {
-    name   = "platform-details"
-    values = ["Red Hat Enterprise Linux"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  filter {
-    name   = "root-device-type"
-    values = ["ebs"]
-  }
+    filter {
+        name   = "virtualization-type"
+        values = ["hvm"]
+    }
 }
 
 data "aws_ssm_parameter" "open_vpn_sg_id" {
