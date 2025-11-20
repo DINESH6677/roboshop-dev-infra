@@ -1,7 +1,7 @@
 resource "aws_cloudfront_distribution" "roboshop" {
   
   origin {
-    # roboshop-dev.daws86s.fun
+    # roboshop-dev.devopswithdinesh.shop
     domain_name = "${var.project_name}-${var.environment}.${var.domain_name}"
     origin_id   = "${var.project_name}-${var.environment}.${var.domain_name}"
     custom_origin_config {
@@ -14,7 +14,7 @@ resource "aws_cloudfront_distribution" "roboshop" {
 
   enabled             = true
   
-  # dev.daws86s.fun
+  # dev.devopswithdinesh.shop
   aliases = ["${var.environment}.${var.domain_name}"]
 
   default_cache_behavior {
@@ -72,7 +72,7 @@ resource "aws_cloudfront_distribution" "roboshop" {
 
 resource "aws_route53_record" "cdn" {
   zone_id = var.zone_id
-  name    = "${var.environment}.${var.domain_name}" # dev.daws86s.fun
+  name    = "${var.environment}.${var.domain_name}" # dev.devopswithdinesh.shop
   type    = "A"
   allow_overwrite = true
 
